@@ -55,7 +55,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     } else {
         TreeNode *temp = tree->root;
         while(true){
-            if(tree->lower_than(key, temp->pair->key))
+            if(key < temp->pair->key)
             {
                 if(temp->left == NULL)
                 {
@@ -65,7 +65,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
                 else
                     temp = temp->left;
             }
-            else if(tree->lower_than(temp->pair->key, key))
+            else if(key>temp->pair->key)
             {
                 if(temp->right == NULL)
                 {
