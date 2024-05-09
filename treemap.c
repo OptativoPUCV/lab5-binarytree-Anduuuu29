@@ -124,7 +124,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             tree->root=NULL;
         }
         free(temp);
-    }
+    }//solo un hijo
     else if(node->left==NULL || node->right==NULL)
     {
         TreeNode* child;
@@ -150,7 +150,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             tree->root=child;
         }
     }
-    else
+    else//dos hijos
     {
         TreeNode* min = minimum(node->right);
         temp->pair->key = min->pair->key;
@@ -222,10 +222,9 @@ Pair * nextTreeMap(TreeMap * tree) {
         tree->current = minimum(tree->current->right);
         return tree->current->pair;
     }
-    else
+    else if(tree->current->left != NULL)
     {
         TreeNode* temp = tree->current;
-        
+         
     }
-    return NULL;
 }
