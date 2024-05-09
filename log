@@ -38,3 +38,17 @@ Thu 09 May 2024 12:05:10 AM UTC:
  tests:  11|6
 total_score: 15/70
 c046394
+Thu 09 May 2024 12:19:08 AM UTC: 
+ treemap.c | 46 ++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 44 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:102:1: error: expected expression before ‘}’ token
+  102 | }
+      | ^
+treemap.c:100:15: error: unused variable ‘parent’ [-Werror=unused-variable]
+  100 |     TreeNode* parent = NULL;
+      |               ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+0d94107
