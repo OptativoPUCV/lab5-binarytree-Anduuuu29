@@ -224,7 +224,8 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     else if(tree->current->left != NULL)
     {
-        TreeNode* temp = tree->current;
-         
+        tree->current = minimum(tree->current->left);
+        return tree->current->pair;   
     }
+    return NULL;
 }
