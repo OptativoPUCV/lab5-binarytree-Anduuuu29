@@ -222,10 +222,16 @@ Pair * nextTreeMap(TreeMap * tree) {
         tree->current = minimum(tree->current->right);
         return tree->current->pair;
     }
-    else if(tree->current->left != NULL)
+    else
     {
-        tree->current = minimum(tree->current->left);
-        return tree->current->pair;   
+        TreeNode* temp = tree->current->parent;
+        while(temp != NULL && tree->current == temp->right)
+            {
+                tree->current = temp;
+                temp = temp->parent;
+            }
+        tree->current = temp;
+        return temp == NULL ? NULL : temp->pair;
     }
     return NULL;
 }
