@@ -203,13 +203,13 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-    TreeNode *temp = tree->root;
-    if(temp->right != NULL)
-    {
-        temp = minimum(temp->right);
-    }
-    tree->current = temp;
+    if(tree == NULL || tree->root == NULL)
+        return NULL;
+    TreeNode* temp = tree->root;
+    while(temp->left != NULL)
+        temp = temp->left;
     return temp->pair;
+
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
