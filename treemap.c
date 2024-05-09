@@ -156,11 +156,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         temp->pair->key = min->pair->key;
         temp->pair->value = min->pair->value;
         removeNode(tree,min);
-        
     }
-    
-        
-    
 }
 
 
@@ -207,8 +203,13 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-    
-    return NULL;
+    TreeNode *temp = tree->root;
+    if(temp->right != NULL)
+    {
+        temp = minimum(temp->right);
+    }
+    tree->current = temp;
+    return temp->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
