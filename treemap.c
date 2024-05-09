@@ -81,7 +81,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
                         aux = aux->right;
                 }
                 else {
-                    aux->pair = value;
                     free(newNodo);
                 }
             }
