@@ -217,15 +217,16 @@ Pair * upperBound(TreeMap * tree, void* key) {
             else {
                 aux = aux->left;
             }
-            if(temp != NULL)
-            {
-                tree->current = temp;
-                return temp->pair;
-            }
-            else{
-                return NULL;
-            }
         }
+        if(temp != NULL)
+        {
+            tree->current = temp;
+            return temp->pair;
+        }
+        else{
+            return NULL;
+        }
+        
     return NULL;
 }
 
