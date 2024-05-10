@@ -222,6 +222,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
                 tree->current = temp;
                 return temp->pair;
             }
+            else{
+                return NULL;
+            }
         }
     return NULL;
 }
